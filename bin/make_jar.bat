@@ -1,0 +1,1 @@
+"%JAVA_HOME%\jar" cvfm bmp2ico.jar project.mf *.class
