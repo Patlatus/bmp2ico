@@ -35,18 +35,25 @@ final class Button1Click implements ActionListener{
 	
 	public void actionPerformed(ActionEvent e){
 		MainForm.Label6.setText("Status: In progress...");
-		switch (MainForm.ComboBox1.getSelectedIndex()) {
-		case 0: 
-			DelphiTools.makeTransparentCopy(MainForm.Edit1.getText(), MainForm.Edit2.getText());
-			break;
-		case 1:
-			DelphiTools.makeIco1(MainForm.Edit1.getText(), MainForm.Edit2.getText());
-			break;
-		case 2:
-			DelphiTools.makeIco4(MainForm.Edit1.getText(), MainForm.Edit3.getText(), MainForm.Edit4.getText(), MainForm.Edit2.getText());
-			break;
-			
-		};
+		try {
+	
+			switch (MainForm.ComboBox1.getSelectedIndex()) {
+			case 0: 
+				DelphiTools.makeTransparentCopy(MainForm.Edit1.getText(), MainForm.Edit2.getText());
+				break;
+			case 1:
+				DelphiTools.makeIco1(MainForm.Edit1.getText(), MainForm.Edit2.getText());
+				break;
+			case 2:
+				DelphiTools.makeIco4(MainForm.Edit1.getText(), MainForm.Edit3.getText(), MainForm.Edit4.getText(), MainForm.Edit2.getText());
+				break;
+				
+			};
+		
+		}
+		catch ( Exception ex ) {
+			JOptionPane.showMessageDialog(null, "Error occured\r\n" + ex.getMessage() );
+		}		
 		MainForm.Label6.setText("Status: Finished.");
 
 	}
